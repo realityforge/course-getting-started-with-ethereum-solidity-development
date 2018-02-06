@@ -9,3 +9,5 @@ $ export GETH_DATADIR=`pwd`/data
 $ mkdir -p $GETH_DATADIR
 $ geth --datadir $GETH_DATADIR init genesis.json
 ```
+
+Run the command `tree $GETH_DATADIR` to see the layout of the directory.
