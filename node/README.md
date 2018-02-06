@@ -49,3 +49,27 @@ Notes:
   easy to talk to Ethereum from mist.
 * `--unlock 0` indicates the account where mining rewards will be deposited, with the password of that account
   specified by `--password`.
+
+4. Attach to running node to inspect it. This relies on ipc endpoint being setup correctly. You can open up
+  a console once the geth node is running by executing `geth attach`. Then you can run all sorts of commands
+  in the console:
+
+  - `eth.accounts` - list the addresses of the accounts on the node.
+  - `eth.coinbase` - the coinbase of node/block (which happens to always be the first account in our configuration).
+  - `eth.getBalance(eth.coinbase)` - get the number of wei in coinbase account.
+  - `eth.getBalance(eth.accounts[0])` - get the number of wei in coinbase account.
+  - `eth.getBalance(eth.accounts[1])` - get the number of wei in second account (Should be zero atm).
+  - `web3.fromWei(eth.getBalance(eth.coinbase),'ether')` - get the number of ether in mining account.
+  - `miner.stop()` - stop miner.
+  - `miner.start()` - start miner.
+  - `miner.start(3)` - start miner using up to 3 threads.
+  - `net.version` - retrieve the networkid of network.
+  - `personal.unlockAccount(eth.accounts[1],'letmein',300)` - unlock the second account for 300 seconds.
+  - `personal.unlockAccount(eth.accounts[2])` - unlock the third account for 10 minutes and prompt for password.
+  - `eth.sendTransaction({from: eth.coinbase, to: eth.accounts[1], value: web3.toWei(100, "ether")})` - Transfer
+    100 ether from coinbase account (i.e. miner) to the second account.
+
+  This console just provides access to a configured instance of the web3 javascript API so anything you can do
+  with that API can be done from the console. See the [Javascript API](https://github.com/ethereum/wiki/wiki/JavaScript-API)
+  and the [JavaScript Console](https://github.com/ethereum/go-ethereum/wiki/JavaScript-Console) documentation
+  for further details.
