@@ -7,6 +7,8 @@ The following steps are required when setting up the network.
 ```bash
 $ export GETH_DATADIR=`pwd`/data
 $ mkdir -p $GETH_DATADIR
+$ cd $GETH_DATADIR
+$ puppeth # this tool helps you to create genesis.json from cli wizard
 $ geth --datadir $GETH_DATADIR init genesis.json
 ```
 
@@ -28,9 +30,15 @@ geth --datadir $GETH_DATADIR account list
 
 3. Start the node as a miner.
 
-Select a networkid that does not align with a public network (i.e. 1 is mainnet, 2 and 3 are testnets).
-We choose 4224. Then there are several parameters relating to network connectivity of the node and some
-relating to mining.
+Select a networkid that does not align with a public network. We choose 4224. Then there are several
+parameters relating to network connectivity of the node and some relating to mining.
+
+Public networks include:
+* 1 - Main net
+* 2 - Morden test net (obsoletet)
+* 3 - Ropsten test net
+* 4 - Rinkeby test net
+* 42 - Kovan test net
 
 Before running the command we need to create a file that contains password for the account that the coinbase
 transaction will deposit the mining reward into.
