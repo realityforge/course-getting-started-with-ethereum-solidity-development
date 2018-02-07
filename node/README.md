@@ -28,8 +28,9 @@ geth --datadir $GETH_DATADIR account list
 
 3. Start the node as a miner.
 
-Select a networkid that does not align with a public network (i.e. not a low number). We choose 4224. Then
-there are several parameters relating to network connectivity of the node and some relating to mining.
+Select a networkid that does not align with a public network (i.e. 1 is mainnet, 2 and 3 are testnets).
+We choose 4224. Then there are several parameters relating to network connectivity of the node and some
+relating to mining.
 
 Before running the command we need to create a file that contains password for the account that the coinbase
 transaction will deposit the mining reward into.
