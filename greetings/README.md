@@ -30,3 +30,13 @@ Remove `truffle-config.js` as it is only useful under windows.
   a contract view function. To send a transaction to Ethereum which is required if you are invoking a contract
   function that changes state (i.e. is not a view function), you pass a config object literal after the parameters
   like `app.setMessage('My New Message',{from: web3.eth.accounts[0]})`
+
+* We can deploy to a specific network as configured in `truffle.js` by running migrate specifying the network via
+  something like the following which deploys to the contract named `ganache` in `truffle.js`
+
+
+    truffle migrate --compile-all --reset --network ganache
+
+You can also bring up a console for same network via:
+
+    truffle console --network ganache
