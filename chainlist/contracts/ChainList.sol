@@ -15,7 +15,7 @@ contract ChainList {
     price = _price;
   }
 
-  function getArticle() public view returns (address seller, string name, string description, uint256 price) {
+  function getArticle() public view returns (address, string, string, uint256) {
     return (seller, name, description, price);
   }
 }
