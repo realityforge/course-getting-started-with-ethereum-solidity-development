@@ -8,5 +8,10 @@
     "url": "https://github.com/chainskills/greetings-truffle.git",
     "branch": "master",
     "revision": "08be62451de4a6a2e595802d74cb6319606389d2"
+  },
+  "vendor/greetings-web3": {
+    "url": "https://github.com/chainskills/greetings-web3.git",
+    "branch": "master",
+    "revision": "f0353ccf2d46c14ef7524ee01f2c4ceef91a0a85"
   }
 }
