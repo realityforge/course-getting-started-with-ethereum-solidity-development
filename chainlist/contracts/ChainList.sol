@@ -8,7 +8,7 @@ contract ChainList {
   // The price is in wei
   uint256 price;
 
-  function sellArticle(string _name, string _description, uint256 price) public {
+  function sellArticle(string _name, string _description, uint256 _price) public {
     seller = msg.sender;
     name = _name;
     description = _description;
