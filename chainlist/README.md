@@ -1,34 +1,12 @@
-# ChainSkills Truffle Box
+# ChainList Application
 
-This Truffle Box has all you need to create a DApp by following the course delivered by [ChainSkills](https://www.udemy.com/getting-started-with-ethereum-solidity-development/).
+This application was created via unboxing a new project via `truffle unbox chainskills/chainskills-box`.
 
-This box has been based from [pet-shop-box](https://github.com/truffle-box/pet-shop-box).
+# Setup
 
-## Installation
+Upload the contracts to ganache:
 
-1. Install Truffle globally.
-    ```javascript
-    npm install -g truffle
-    ```
+    > truffle migrate --reset --compile-all --network ganache
 
-2. Download the box. This also takes care of installing the necessary dependencies.
-    ```javascript
-    truffle unbox chainskills/chainskills-box
-    ```
-
-3. Run the development console.
-    ```javascript
-    truffle develop
-    ```
-
-4. Compile and migrate the smart contracts. Note inside the development console we don't preface commands with `truffle`.
-    ```javascript
-    compile
-    migrate
-    ```
-
-5. Run the `liteserver` development server (outside the development console) for front-end hot reloading. Smart contract changes must be manually recompiled and migrated.
-    ```javascript
-    // Serves the front-end on http://localhost:3000
-    npm run dev
-    ```
+Run the local `liteserver` development server via `yarn dev` for front-end hot reloading. This starts a local
+server on on http://localhost:3000. (Smart contract changes must be manually recompiled and migrated.)
