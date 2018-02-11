@@ -38,6 +38,7 @@ App = {
   },
 
   initContract: function() {
+    // ChainList.json is put at root directory of server via browser sync. See bs-config.json in base directory
     $.getJSON('ChainList.json', function(chainListArtifact) {
       // get the contract artifact file and use it to instantiate a truffle contract abstraction
       App.contracts.ChainList = TruffleContract(chainListArtifact);
