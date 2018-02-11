@@ -7,26 +7,26 @@ contract('ChainList', function(accounts) {
   // accounts is defined by the truffle test framework
 
   it('should be initialized with empty values', async() => {
-    const instance = await ChainList.deployed();
-    const data = await instance.getArticle();
-    assert.equal(data[0], 0x0, 'seller');
-    assert.equal(data[1], '', 'name');
-    assert.equal(data[2], '', 'description');
-    assert.equal(data[3], 0, 'price');
+    const contract = await ChainList.deployed();
+    const results = await contract.getArticle();
+    assert.equal(results[0], 0x0, 'seller');
+    assert.equal(results[1], '', 'name');
+    assert.equal(results[2], '', 'description');
+    assert.equal(results[3], 0, 'price');
   });
 
   it('should set values when sellArticle invoked', async() => {
-    const instance = await ChainList.deployed();
+    const contract = await ChainList.deployed();
     const seller = accounts[0];
     const name = 'My iPhone';
     const description = 'Good condition';
     const price = web3.toWei(1, 'ether');
-    await instance.sellArticle(name, description, price, { from: seller });
+    await contract.sellArticle(name, description, price, { from: seller });
 
-    const data = await instance.getArticle();
-    assert.equal(data[0], seller, 'seller');
-    assert.equal(data[1], name, 'name');
-    assert.equal(data[2], description, 'description');
-    assert.equal(data[3], price, 'price');
+    const results = await contract.getArticle();
+    assert.equal(results[0], seller, 'seller');
+    assert.equal(results[1], name, 'name');
+    assert.equal(results[2], description, 'description');
+    assert.equal(results[3], price, 'price');
   });
 });
