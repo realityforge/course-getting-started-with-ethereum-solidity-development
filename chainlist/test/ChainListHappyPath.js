@@ -5,6 +5,7 @@ const ChainList = artifacts.require('./ChainList.sol');
 
 contract('ChainList', function(accounts) {
   // accounts is defined by the truffle test framework
+
   it('should be initialized with empty values', async() => {
     const instance = await ChainList.deployed();
     const data = await instance.getArticle();
