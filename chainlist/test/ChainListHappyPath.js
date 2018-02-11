@@ -8,13 +8,9 @@ contract('ChainList', function(accounts) {
   it('should be initialized with empty values', async() => {
     const instance = await ChainList.deployed();
     const data = await instance.getArticle();
-    const seller = data[0];
-    const name = data[1];
-    const description = data[2];
-    const price = data[3];
-    assert.equal(seller, 0x0);
-    assert.equal(name, '');
-    assert.equal(description, '');
-    assert.equal(price, 0);
+    assert.equal(data[0], 0x0, 'seller');
+    assert.equal(data[1], '', 'name');
+    assert.equal(data[2], '', 'description');
+    assert.equal(data[3], 0, 'price');
   });
 });
