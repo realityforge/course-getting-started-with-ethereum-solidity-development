@@ -14,4 +14,19 @@ contract('ChainList', function(accounts) {
     assert.equal(data[2], '', 'description');
     assert.equal(data[3], 0, 'price');
   });
+
+  it('should set values when sellArticle invoked', async() => {
+    const instance = await ChainList.deployed();
+    const seller = accounts[0];
+    const name = 'My iPhone';
+    const description = 'Good condition';
+    const price = web3.toWei(1, 'ether');
+    await instance.sellArticle(name, description, price, { from: seller });
+
+    const data = await instance.getArticle();
+    assert.equal(data[0], seller, 'seller');
+    assert.equal(data[1], name, 'name');
+    assert.equal(data[2], description, 'description');
+    assert.equal(data[3], price, 'price');
+  });
 });
