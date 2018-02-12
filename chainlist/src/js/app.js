@@ -59,7 +59,7 @@ App = {
     App.contracts.ChainList.deployed().then(function(instance) {
       return instance.getArticle();
     }).then(function(article) {
-      if (article[0] === 0x0) {
+      if (article[0] == 0x0) {
         // no article
         return;
       }
