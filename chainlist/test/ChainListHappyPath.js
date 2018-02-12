@@ -21,7 +21,18 @@ contract('ChainList', function(accounts) {
     const name = 'My iPhone';
     const description = 'Good condition';
     const price = web3.toWei(1, 'ether');
-    await contract.sellArticle(name, description, price, { from: seller });
+    /*
+     * The receipt includes the events as well as other details about the transaction.
+     */
+    const receipt = await contract.sellArticle(name, description, price, { from: seller });
+
+    assert.equal(receipt.logs.length, 1, 'One event should have been triggered');
+
+    const event = receipt.logs[0];
+    assert.equal(event.event, 'SellArticleEvent');
+    assert.equal(event.args._seller, seller);
+    assert.equal(event.args._name, name);
+    assert.equal(event.args._price, price);
 
     const results = await contract.getArticle();
     assert.equal(results[0], seller, 'seller');
