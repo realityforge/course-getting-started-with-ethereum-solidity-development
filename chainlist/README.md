@@ -25,3 +25,6 @@ and then type in commands such as:
     # Get Truffles local proxy for deployed contract
     $ ChainList.deployed().then(function(i){app = i;})
     $ app.getArticle()
+    
+    # Watch for the SellArticleEvent events with no filter (first {}), starting from latest block (second {} configuration)
+    $ app.SellArticleEvent({},{}).watch(function(error, event){console.log(event);})
