@@ -10,9 +10,10 @@ contract('ChainList', function(accounts) {
     const contract = await ChainList.deployed();
     const results = await contract.getArticle();
     assert.equal(results[0], 0x0, 'seller');
-    assert.equal(results[1], '', 'name');
-    assert.equal(results[2], '', 'description');
-    assert.equal(results[3], 0, 'price');
+    assert.equal(results[1], 0x0, 'buyer');
+    assert.equal(results[2], '', 'name');
+    assert.equal(results[3], '', 'description');
+    assert.equal(results[4], 0, 'price');
   });
 
   it('should set values when sellArticle invoked', async() => {
@@ -36,8 +37,9 @@ contract('ChainList', function(accounts) {
 
     const results = await contract.getArticle();
     assert.equal(results[0], seller, 'seller');
-    assert.equal(results[1], name, 'name');
-    assert.equal(results[2], description, 'description');
-    assert.equal(results[3], price, 'price');
+    assert.equal(results[1], 0x0, 'buyer');
+    assert.equal(results[2], name, 'name');
+    assert.equal(results[3], description, 'description');
+    assert.equal(results[4], price, 'price');
   });
 });

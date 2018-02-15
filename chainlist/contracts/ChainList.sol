@@ -3,6 +3,8 @@ pragma solidity ^0.4.19;
 contract ChainList {
   // The account that put up listing
   address seller;
+  // The account that purchased listing
+  address buyer;
   string name;
   string description;
   // The price is in wei
@@ -26,7 +28,7 @@ contract ChainList {
     SellArticleEvent(seller, name, price);
   }
 
-  function getArticle() public view returns (address, string, string, uint256) {
-    return (seller, name, description, price);
+  function getArticle() public view returns (address, address, string, string, uint256) {
+    return (seller, buyer, name, description, price);
   }
 }
