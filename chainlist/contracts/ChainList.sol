@@ -10,8 +10,8 @@ contract ChainList {
   // The price is in wei
   uint256 price;
 
+  // Seller is indexed which means clients can search/filter on this field
   event SellArticleEvent (
-    // Seller is indexed which means clients can search/filter on this field
     address indexed _seller,
     string _name,
     uint256 _price
