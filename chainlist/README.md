@@ -28,3 +28,10 @@ and then type in commands such as:
     
     # Watch for the SellArticleEvent events with no filter (first {}), starting from latest block (second {} configuration)
     $ app.SellArticleEvent({},{}).watch(function(error, event){console.log(event);})
+
+# Transaction Debugging
+
+You can also step through a transaction run on truffle as a way to debug. This is done via:
+
+    # Assume that the Transaction hash is 0x6b99e0dcf57fd551221fc5a1a5da826418a0054a725dcb5317f91daf4b5b4833
+    $ truffle debug 0x6b99e0dcf57fd551221fc5a1a5da826418a0054a725dcb5317f91daf4b5b4833 --network ganache
