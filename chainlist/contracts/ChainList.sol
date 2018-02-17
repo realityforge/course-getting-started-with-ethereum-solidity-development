@@ -80,4 +80,44 @@ contract ChainList {
     // Notify listeners
     BuyArticleEvent(article.articleId, article.seller, article.buyer, article.name, article.price);
   }
+
+  // fetch the number of articles in the contract
+  function getNumberOfArticles() public constant returns (uint) {
+    return lastArticleId;
+  }
+
+  // fetch and returns all article IDs available for sale
+  function getArticlesForSale() public constant returns (uint[]) {
+    //
+    // NOTE: This is a terrible solution due to iteration over arrays and corresponding gas cost
+    // However as it is view method that should not be used by other contracts then gas price
+    // never comes into accounting. If it did we should have multiple mappings - one for sold
+    // and one for unsold and maintain this list as appropriate.
+    //
+
+    // we check whether there is at least one article
+    if (lastArticleId == 0) {
+      return new uint[](0);
+    }
+
+    // prepare intermediary array
+    uint[] memory articleIds = new uint[](lastArticleId);
+
+    uint numberOfArticlesForSale = 0;
+    // iterate over articles
+    for (uint i = 1; i <= lastArticleId; i++) {
+      // keep only the ID of articles not sold yet
+      if (articles[i].buyer == 0x0) {
+        articleIds[numberOfArticlesForSale] = articles[i].articleId;
+        numberOfArticlesForSale++;
+      }
+    }
+
+    // copy the articleIds array into the smaller forSale array
+    uint[] memory forSale = new uint[](numberOfArticlesForSale);
+    for (uint j = 0; j < numberOfArticlesForSale; j++) {
+      forSale[j] = articleIds[j];
+    }
+    return (forSale);
+  }
 }
