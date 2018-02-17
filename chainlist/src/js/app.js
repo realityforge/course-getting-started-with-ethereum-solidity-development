@@ -158,7 +158,7 @@ App = {
   buyArticle: function() {
     event.preventDefault();
 
-    // retrieve the article price
+    // retrieve the article
     const _price = parseFloat($(event.target).data('value'));
 
     App.contracts.ChainList.deployed().then(function(instance) {
