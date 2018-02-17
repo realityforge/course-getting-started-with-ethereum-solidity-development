@@ -135,7 +135,6 @@ App = {
   listenToEvents: function() {
     App.contracts.ChainList.deployed().then(function(instance) {
       instance.SellArticleEvent({}, {}).watch(function(error, event) {
-        debugger;
         if (!error) {
           $('#events').append('<li class="list-group-item">' + event.args._name + ' is now for sale</li>');
         } else {
