@@ -35,7 +35,7 @@ contract ChainList {
 
   function sellArticle(string _name, string _description, uint256 _price) public returns (uint256) {
 
-    lastArticleId += 1;
+    lastArticleId++;
     articles[lastArticleId] = Article(lastArticleId, msg.sender, 0x0, _name, _description, _price);
 
     var article = articles[lastArticleId];
