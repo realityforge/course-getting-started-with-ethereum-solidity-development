@@ -33,7 +33,7 @@ contract ChainList {
   mapping(uint256 => Article) public articles;
   uint256 public lastArticleId;
 
-  function sellArticle(string _name, string _description, uint256 _price) public returns(uint256) {
+  function sellArticle(string _name, string _description, uint256 _price) public returns (uint256) {
 
     lastArticleId += 1;
     articles[lastArticleId] = Article(lastArticleId, msg.sender, 0x0, _name, _description, _price);
