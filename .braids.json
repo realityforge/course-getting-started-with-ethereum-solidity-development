@@ -2,7 +2,7 @@
   "vendor/chainlist": {
     "url": "https://github.com/sarbogast/chainlist.git",
     "branch": "master",
-    "revision": "730083a550df948ac4c178945a6267354da89107"
+    "revision": "c5d3bdcb866c6e311ff91df2e9abb09495418b4f"
   },
   "vendor/greetings-truffle": {
     "url": "https://github.com/chainskills/greetings-truffle.git",

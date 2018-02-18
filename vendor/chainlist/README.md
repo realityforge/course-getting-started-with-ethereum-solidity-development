@@ -21,7 +21,7 @@ To build, deploy and test your Dapp locally, you need to install the following t
 * **testrpc**: https://github.com/ethereumjs/testrpc
   * Simulates an Ethereum node.
 
-* **Metamask**: https://metamask.io/
+* **Mestamask**: https://metamask.io/
   * Transforms Chrome into a Dapp browser
 
 ## Step 1. Clone the project
@@ -67,7 +67,7 @@ Import accounts defined in your testrpc Ethereum node.
 If you used `starttestrpc.sh`, here are the 3 private keys defined in the script:
 * 0x351494a5ae8f9b70a2a2fd482146ab4578f61d4d796685c597ec6683635a940e
 * 0x4cd491f96e6623edb52719a8d4d1110a87d8d83e3fa86f8e14007cb3831c0a2b
-* 0x0ef40e0d6ada046010b6965d73603cabae1a119ca804f5d9e9a9ce866b0bea7d
+* 0xef40e0d6ada046010b6965d73603cabae1a119ca804f5d9e9a9ce866b0bea7d
 
 In Metamask, rename these accounts respectively:
 * testrpc-coinbase
@@ -80,7 +80,7 @@ In Metamask, rename these accounts respectively:
 $ npm run dev
 ```
 
-In your browser, open the following URL: http://localhost:3000
+In your browser, open the following URL: http://localhost:8080
 
 ## Step 9. Metamask: switch to the `testrpc-account1` account
 
@@ -139,7 +139,7 @@ truffle(development)> app.sellArticle("Article 1", "Description for Article 1", 
 
 ### Get the number of articles:
 ```
-truffle(development)> app.getNumberOfArticles()
+truffle(development)> app.getNumberArticles()
 ```
 
 ### Get the detail of an article (identified by its ID):
@@ -163,7 +163,6 @@ truffle(development)> app.kill({from: web3.eth.accounts[0]})
 
 * Is Metamask slow ? try to disable and enable the extension. This happens sometimes, especially when we work with a private chain.
 * When you switch accounts in Metamask, don't forget to refresh the page to make sure you get the current account set in Metamask.
-* When you restart your local node, Metamask caches the old contract and its data. You have to switch Metamask network to any other network then back to the local node to see changes.
 
 ## Learn more
 
