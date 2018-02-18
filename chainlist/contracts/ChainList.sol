@@ -1,6 +1,8 @@
 pragma solidity ^0.4.19;
 
-contract ChainList {
+import "./Mortal.sol";
+
+contract ChainList is Mortal {
   struct Article {
     uint256 articleId;
     // The account that put up listing
