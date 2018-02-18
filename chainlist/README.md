@@ -2,6 +2,9 @@
 
 This application was created via unboxing a new project via `truffle unbox chainskills/chainskills-box`.
 
+**WARNING**: The tests no longer pass because after I changed the contracts code I didn't feel like updating
+tests and did not feel like there was anything to learn from them. 
+
 # Setup
 
 Upload the contracts to ganache:
