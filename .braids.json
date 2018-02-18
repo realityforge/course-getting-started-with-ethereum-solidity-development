@@ -1,6 +1,6 @@
 {
   "vendor/chainlist": {
-    "url": "https://github.com/chainskills/chainlist.git",
+    "url": "https://github.com/sarbogast/chainlist.git",
     "branch": "master",
     "revision": "730083a550df948ac4c178945a6267354da89107"
   },
