@@ -4,6 +4,11 @@
     "branch": "master",
     "revision": "c5d3bdcb866c6e311ff91df2e9abb09495418b4f"
   },
+  "vendor/chainlist-truffle4": {
+    "url": "https://github.com/sarbogast/chainlist-truffle4.git",
+    "branch": "master",
+    "revision": "1dd699a434a3ebfb1ff24f82baf92617bef9c09a"
+  },
   "vendor/greetings-truffle": {
     "url": "https://github.com/chainskills/greetings-truffle.git",
     "branch": "master",
